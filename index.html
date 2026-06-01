@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-[#f5efe6] flex justify-center items-center min-h-screen p-1 font-sans">
+    <div class="bg-white rounded-2xl w-100% max-w-600px overflow-hidden relative">
+        <div class=" p-8 text-center" id="start-screen">
+            <h1 class="text-2xl font-bold text-[#e86a33] mb-5">Quiz Time</h1>
+            <p class="mb-4 ">Test your knowledge with these fun questions</p>
+            <button class="border bg-[#e86a33] p-3 text-[#f5efe6] rounded-[10px] w-36" id="start-btn">Start Quiz</button>
+
+        </div>
+
+        <div class="bg-white rounded-2xl w-100% max-w-600px overflow-hidden relative">
+
+            <!-- ADD THIS OPTIONS SCREEN HERE -->
+            <div class="p-8 text-center hidden" id="options-screen">
+                <h2 class="text-2xl font-bold text-[#e86a33] mb-5">Quiz Settings</h2>
+                
+                <div class="mb-4 text-left">
+                    <label class="block mb-2 font-bold">Number of Questions:</label>
+                    <select id="num-questions" class="w-full p-2 border rounded-sm border-[#d0c0a9]">
+                        <option value="5">5 Questions</option>
+                        <option value="10">10 Questions</option>
+                        <option value="15">15 Questions</option>
+                    </select>
+                </div>
+
+                <div class="mb-4 text-left">
+                    <label class="block mb-2 font-bold">Difficulty:</label>
+                    <select id="difficulty" class="w-full p-2 border rounded-sm border-[#d0c0a9]">
+                        <option value="">Any</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+
+                <div class="mb-4 text-left">
+                    <label class="block mb-2 font-bold">Category:</label>
+                    <select id="category" class="w-full p-2 border rounded-sm border-[#d0c0a9]">
+                        <option value="">Any Category</option>
+                        <option value="9">General Knowledge</option>
+                        <option value="21">Sports</option>
+                        <option value="23">History</option>
+                        <option value="27">Animals</option>
+                        <option value="18">Science & Nature</option>
+                    </select>
+                </div>
+
+                <button class="bg-[#e86a33] p-3 text-white rounded-[10px] w-36" id="start-options-btn">Start Quiz</button>
+            </div>
+
+        <div class=" hidden p-5 text-center rounded-lg w-110" id="quiz-screen">
+            <div class="">
+                <h2 class="text-center text-[20px] font-bold mb-3"  id="question-text"></h2>
+                <div class="flex justify-between mb-4 ">
+                    <p>
+                        Question <span id="current-question"></span> of <span id="total-questions"></span>
+                    </p>
+                    <p>
+                        Score: <span id="score">0</span>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="flex flex-col gap-3 " id="answers-container">
+                <button class="text-left p-2 text-black bg-[#f5efe6] border rounded-sm border-[#d0c0a9]"></button>
+                <button class="text-left p-2 text-black bg-[#f5efe6] border rounded-sm border-[#d0c0a9]"></button>
+                <button class="text-left p-2 text-black bg-[#f5efe6] border rounded-sm border-[#d0c0a9]"></button>
+                <button class="text-left p-2 text-black bg-[#f5efe6] border rounded-sm border-[#d0c0a9]"></button>
+            </div>
+
+        </div>
+
+        <div class="hidden p-5 text-center w-110" id="result-screen">
+            <h1 class="font-bold text-[#e86a33] text-2xl mb-5">Quiz Results</h1>
+            <div class="bg-[#f5efe6] p-5 rounded-lg mb-4">
+                <p class="mb-4">You Scored <span id="final-score">5</span> out of <span id="max-score">5</span></p>
+                <p id="result-message" class="font-bold text-2xl text-[#e86a33] ">Good Effort! Keep Learning</p>
+            </div>
+            <button class="bg-[#e86a33] p-3 px-6 text-white rounded-[10px]" id="restart-btn">Restart Quiz</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
