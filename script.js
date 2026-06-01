@@ -97,7 +97,7 @@ function fetchQuestions(url) {
     });
 }
 
-// ===== HELPER FUNCTIONS =====
+
 
 function decodeHTMLEntities(text) {
   const textarea = document.createElement("textarea");
@@ -133,10 +133,10 @@ function displayQuestion() {
   currentQuestionSpan.textContent = currentQuestionIndex + 1;
   questionText.textContent = currentQuestion.question;
 
-  // Clear old answers
+  
   answersContainer.innerHTML = "";
 
-  // Create buttons for each answer
+  
   for (let i = 0; i < currentQuestion.answers.length; i++) {
     const answer = currentQuestion.answers[i];
     const button = document.createElement("button");
@@ -160,19 +160,19 @@ function checkAnswer(clickedButton, isCorrect, allAnswers) {
 
   // Color the clicked button
   if (isCorrect) {
-    clickedButton.style.backgroundColor = "#22c55e"; // green
+    clickedButton.style.backgroundColor = "#22c55e";
     clickedButton.style.color = "white";
     score = score + 1;
     scoreSpan.textContent = score;
   } else {
-    clickedButton.style.backgroundColor = "#ef4444"; // red
+    clickedButton.style.backgroundColor = "#ef4444"; 
     clickedButton.style.color = "white";
 
     // Find and color the correct answer green
     const buttons = answersContainer.querySelectorAll("button");
     for (let i = 0; i < buttons.length; i++) {
       if (allAnswers[i].correct) {
-        buttons[i].style.backgroundColor = "#22c55e"; // green
+        buttons[i].style.backgroundColor = "#22c55e"; 
         buttons[i].style.color = "white";
       }
     }
@@ -184,7 +184,7 @@ function checkAnswer(clickedButton, isCorrect, allAnswers) {
     allButtons[i].disabled = true;
   }
 
-  // Move to next question after 2 seconds
+  // Move to next question after 1 second
   setTimeout(function () {
     nextQuestion();
   }, 1000);
